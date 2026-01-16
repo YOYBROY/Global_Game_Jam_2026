@@ -23,7 +23,7 @@ PresetManager:
     second:
     - m_Preset: {fileID: 2655988077585873504, guid: a2928e36bfb980d4cb7a5f0702214ca7, type: 2}
       m_Filter: SM_
-      m_Disabled: 1
+      m_Disabled: 0
     - m_Preset: {fileID: 2655988077585873504, guid: d2e9bf3b5756a4949b1ea60633b84fa2, type: 2}
       m_Filter: SK_
       m_Disabled: 0
