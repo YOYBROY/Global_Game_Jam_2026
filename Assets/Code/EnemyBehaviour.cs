@@ -37,7 +37,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         speed = agent.speed;
-        foreach
         foreach(Transform point in points)
         {
             point.transform.SetParent(null);
