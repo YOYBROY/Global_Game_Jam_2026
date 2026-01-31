@@ -30,16 +30,17 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     public EnemyStatus status;
-
     private NavMeshAgent agent;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         speed = agent.speed;
-        foreach(Transform point in points)
+        points = new Transform[pointParent.childCount];
+        for(int i = points.Length - 1; i >= 0 ; i--)
         {
-            point.transform.SetParent(null);
+            points[i] = pointParent.GetChild(i);
+            points[i].transform.SetParent(null);
         }
         if(GameEvents.current != null)
         {
