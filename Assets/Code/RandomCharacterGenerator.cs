@@ -47,8 +47,13 @@ public class RandomCharacterGenerator : MonoBehaviour
 
     private void CalculateID()
     {
-        ID = bodyTypes.things[bodyIndex].key * hatTypes.things[hatIndex].key * clothColour.key[clothColourIndex]
-            * hatColour.key[hatColourIndex] * skinColour.key[skinColourIndex] * maskColour.key[maskColourIndex] * maskTypes.things[maskIndex].key;
+        ID = bodyTypes.things[bodyIndex].key;
+        ID *= hatTypes.things[hatIndex].key;
+        ID *= maskTypes.things[maskIndex].key;
+        ID *= clothColour.key[clothColourIndex];
+        ID *= hatColour.key[hatColourIndex]; 
+        ID *= skinColour.key[skinColourIndex]; 
+        ID *= maskColour.key[maskColourIndex]; 
     }
 
     private void SpawnModels()
@@ -61,8 +66,8 @@ public class RandomCharacterGenerator : MonoBehaviour
 
     private void ApplyColours()
     {
-        body.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(0, skinColourIndex);
-        body.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(1, clothColourIndex);
+        body.GetComponent<RandomColourPicker>().GenerateColours();
+        body.GetComponent<RandomColourPicker>().GenerateColours();
         if(hat.GetComponent<MeshRenderer>() != null)
         {
             hat.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(0, hatColourIndex);

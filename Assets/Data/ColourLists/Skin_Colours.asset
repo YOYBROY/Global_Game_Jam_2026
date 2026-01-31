@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab8846781a60d54da8bfdc0d743fc8c, type: 3}
   m_Name: Skin_Colours
   m_EditorClassIdentifier: 
-  key: 590000006100000065000000
+  key: 5900000061000000650000008b00000095000000
   colours:
   - {r: 0.74213827, g: 0.56702757, b: 0.5017601, a: 0}
   - {r: 0.6117647, g: 0.36078432, b: 0.2784314, a: 0}

@@ -13,13 +13,21 @@ public class RandomColourPicker : MonoBehaviour
             materialIndex = materialIndex == 0 ? 1 : 0;
         }
         objectRenderer = GetComponent<Renderer>();
-        Material[] materials = objectRenderer.sharedMaterials;
-        materials[materialIndex].color = colourList[materialIndex].colours[colourIndex];
+        if(objectRenderer.materials.Length == 1)
+        {
+            objectRenderer.material.color = colourList[materialIndex].colours[colourIndex];
+        }
+        if(objectRenderer.materials.Length > 1)
+        {
+            objectRenderer.materials[0].color = colourList[materialIndex].colours[colourIndex];
+            objectRenderer.materials[1].color = colourList[materialIndex].colours[colourIndex];
+        }
     }
 
     public void GenerateColours()
     {
         objectRenderer = GetComponent<Renderer>();
+        
         Material[] materials = objectRenderer.sharedMaterials;
         for (int i = 0; i < materials.Length; i++)
         {
