@@ -18,6 +18,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float lookAngle = 30;
     [SerializeField] private Ease lookAroundEaseType;
     [SerializeField] private float beginLookAroundTime = 0.4f;
+    [SerializeField] private float endLookAroundTime = 0.4f;
     [SerializeField] private float stoppedTime = 2f;
     [SerializeField] private float stoppedTimeVariance = 0.5f;
     [SerializeField] private float attackSpeed = 5f;
@@ -121,7 +122,9 @@ public class EnemyBehaviour : MonoBehaviour
         Sequence seq = DOTween.Sequence();
         seq.AppendInterval(beginLookAroundTime)
         .Append(transform.DORotate(rightRotation, duration / 4).SetEase(lookAroundEaseType))
+        .AppendInterval(endLookAroundTime)
         .Append(transform.DORotate(leftRotation, duration / 2).SetEase(lookAroundEaseType))
+        .AppendInterval(endLookAroundTime)
         .Append(transform.DORotate(forwardRotation, duration / 4).SetEase(lookAroundEaseType))
         .AppendCallback(() => { FinishIdle();});
         return true;
@@ -134,8 +137,9 @@ public class EnemyBehaviour : MonoBehaviour
         Vector3 leftRotation = forwardRotation - new Vector3(0.0f, lookAngle * 2, 0.0f);
 
         Sequence seq = DOTween.Sequence();
-        seq
+        seq.AppendInterval(beginLookAroundTime)
         .Append(transform.DORotate(leftRotation, duration / 2).SetEase(lookAroundEaseType))
+        .AppendInterval(endLookAroundTime)
         .Append(transform.DORotate(forwardRotation, duration / 2).SetEase(lookAroundEaseType))
         .AppendCallback(() => { OnlyLookAround(duration);});
     }
