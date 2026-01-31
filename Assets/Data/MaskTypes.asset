@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308a6223b5886974f90ff93f0d877032, type: 3}
   m_Name: MaskTypes
   m_EditorClassIdentifier: 
-  key: 1f00000025000000290000002b000000
-  value:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  things:
+  - key: 31
+    value: {fileID: 0}
+  - key: 0
+    value: {fileID: 0}
+  - key: 41
+    value: {fileID: 0}
+  - key: 43
+    value: {fileID: 0}

@@ -132,6 +132,7 @@ MonoBehaviour:
   lookAngle: 50
   lookAroundEaseType: 1
   beginLookAroundTime: 0
+  endLookAroundTime: 0.4
   stoppedTime: 7
   stoppedTimeVariance: 0
   attackSpeed: 5
