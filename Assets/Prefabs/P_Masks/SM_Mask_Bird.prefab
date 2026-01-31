@@ -59,5 +59,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fc1972e15d1c4e4b9ad736221de479d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8710611541525556813}
   m_SourcePrefab: {fileID: 100100000, guid: 3fc1972e15d1c4e4b9ad736221de479d, type: 3}
+--- !u!1 &591383998192080264 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3fc1972e15d1c4e4b9ad736221de479d, type: 3}
+  m_PrefabInstance: {fileID: 357030448319949017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8710611541525556813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591383998192080264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea58e8ac27a72d4ebf1254f560af5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colourList:
+  - {fileID: 11400000, guid: 012d4c642a9f1034caa3d1a53e10fdef, type: 2}
+  reverseBodyMaterials: 0

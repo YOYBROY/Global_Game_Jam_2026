@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6318041001047251818}
   m_Layer: 0
-  m_Name: HairOffset
+  m_Name: AccessoriesOffset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

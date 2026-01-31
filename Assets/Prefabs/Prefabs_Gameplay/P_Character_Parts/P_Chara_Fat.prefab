@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7837341056656125917}
   m_Layer: 0
-  m_Name: HairOffset
+  m_Name: AccessoriesOffset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,3 +143,4 @@ MonoBehaviour:
   colourList:
   - {fileID: 11400000, guid: 9d634bba360d2cb478f7913ba20082cd, type: 2}
   - {fileID: 11400000, guid: 1afd38e81c36d8d41a9f84e591f92e1c, type: 2}
+  reverseBodyMaterials: 0

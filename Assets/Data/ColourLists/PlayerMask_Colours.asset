@@ -10,12 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ab8846781a60d54da8bfdc0d743fc8c, type: 3}
-  m_Name: Skin_Colours
+  m_Name: PlayerMask_Colours
   m_EditorClassIdentifier: 
-  key: 5900000061000000650000008b00000095000000
+  key: 11000000
   colours:
-  - {r: 0.74213827, g: 0.56702757, b: 0.5017601, a: 0}
-  - {r: 0.6117647, g: 0.36078432, b: 0.2784314, a: 0}
-  - {r: 0.899371, g: 0.7859997, b: 0.68725514, a: 0}
-  - {r: 0.8745098, g: 0.7254902, b: 0.6901961, a: 0}
-  - {r: 0.54901963, g: 0.41960785, b: 0.3882353, a: 0}
+  - {r: 1, g: 1, b: 1, a: 1}

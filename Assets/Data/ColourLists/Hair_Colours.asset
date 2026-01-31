@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab8846781a60d54da8bfdc0d743fc8c, type: 3}
   m_Name: Hair_Colours
   m_EditorClassIdentifier: 
-  key: 3d0000004300000047000000
+  key: 3d0000004300000047000000250100003301000037010000
   colours:
   - {r: 0.7529412, g: 0.34901962, b: 0.16078432, a: 0}
   - {r: 0.9764706, g: 0.827451, b: 0.34117648, a: 0}
