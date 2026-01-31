@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        Debug.Log(_inputDirection);
         Vector3 forwardMovement = (mainCamera.forward * _inputDirection.y);
         Vector3 horizontalMovement = (mainCamera.right * _inputDirection.x);
         Vector3 moveDirection = (forwardMovement + horizontalMovement).normalized;
