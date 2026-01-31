@@ -32,8 +32,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        Vector3 forwardMovement = (mainCamera.forward * _inputDirection.y);
-        Vector3 horizontalMovement = (mainCamera.right * _inputDirection.x);
+        Vector3 camForward = new Vector3(mainCamera.forward.x, 0, mainCamera.forward.z).normalized;
+        Vector3 camRight = new Vector3(mainCamera.right.x, 0, mainCamera.right.z).normalized;
+        Vector3 forwardMovement = camForward * _inputDirection.y;
+        Vector3 horizontalMovement = camRight * _inputDirection.x;
         Vector3 moveDirection = (forwardMovement + horizontalMovement).normalized;
         CC.SimpleMove(moveDirection * speed);
     }
