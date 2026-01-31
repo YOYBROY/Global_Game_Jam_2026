@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class RandomCharacterGenerator : MonoBehaviour
 {
-    //Body types
-    //Hats
-    //Masks
-
     [SerializeField] private Faketionary bodyTypes;
     [SerializeField] private Faketionary hatTypes;
     [SerializeField] private Faketionary maskTypes;
@@ -42,7 +38,7 @@ public class RandomCharacterGenerator : MonoBehaviour
     {
         bodyIndex = UnityEngine.Random.Range(0, bodyTypes.things.Length);
         hatIndex = UnityEngine.Random.Range(0, hatTypes.things.Length);
-        //maskIndex = Random.Range(0, maskTypes.key.Length);
+        maskIndex = UnityEngine.Random.Range(0, maskTypes.things.Length);
         clothColourIndex = UnityEngine.Random.Range(0, clothColour.colours.Count);
         hatColourIndex = UnityEngine.Random.Range(0, hatColour.colours.Count);
         skinColourIndex = UnityEngine.Random.Range(0, skinColour.colours.Count);
@@ -52,16 +48,15 @@ public class RandomCharacterGenerator : MonoBehaviour
     private void CalculateID()
     {
         ID = bodyTypes.things[bodyIndex].key * hatTypes.things[hatIndex].key * clothColour.key[clothColourIndex]
-            * hatColour.key[hatColourIndex] * skinColour.key[skinColourIndex] * maskColour.key[maskColourIndex]; //* maskTypes.key[maskIndex];
+            * hatColour.key[hatColourIndex] * skinColour.key[skinColourIndex] * maskColour.key[maskColourIndex] * maskTypes.things[maskIndex].key;
     }
 
     private void SpawnModels()
     {
         body = Instantiate(bodyTypes.things[bodyIndex].value, transform.position, quaternion.identity, transform);
-        Transform hatOffset = body.transform.GetChild(0);
-        hat = Instantiate(hatTypes.things[hatIndex].value, hatOffset.position, quaternion.identity, hatOffset);
-        //Transform maskOffset = body.transform.GetChild(1);
-        //mask = Instantiate(maskTypes.value[maskIndex], maskOffset.position, quaternion.identity, maskOffset);
+        Transform accessoryOffset = body.transform.GetChild(0);
+        hat = Instantiate(hatTypes.things[hatIndex].value, accessoryOffset.position, quaternion.identity, accessoryOffset);
+        mask = Instantiate(maskTypes.things[maskIndex].value, accessoryOffset.position, quaternion.identity, accessoryOffset);
     }
 
     private void ApplyColours()
@@ -72,9 +67,9 @@ public class RandomCharacterGenerator : MonoBehaviour
         {
             hat.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(0, hatColourIndex);
         }
-        //if(mask.GetComponent<MeshRenderer>() != null)
-        //{
-            //mask.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(0, maskColourIndex);
-        //}
+        if(mask.GetComponent<MeshRenderer>() != null)
+        {
+            mask.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(0, maskColourIndex);
+        }
     }
 }
