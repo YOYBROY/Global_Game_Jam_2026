@@ -40,6 +40,14 @@ public class EnemyBehaviour : MonoBehaviour
         {
             point.transform.SetParent(null);
         }
+        if(GameEvents.current != null)
+        {
+            GameEvents.current.onPlayerLocated += AlertEnemy;
+        }
+        else
+        {
+            Debug.LogError("GameEvents is not in the scene and event was not added, Please add 'GameEssentials' to the scene");
+        }
     }
 
     void Update()
@@ -127,5 +135,10 @@ public class EnemyBehaviour : MonoBehaviour
             newTargetPoint.y = 0;
             agent.SetDestination(newTargetPoint);
         }
+    }
+
+    void OnDestroy()
+    {
+        GameEvents.current.onPlayerLocated -= AlertEnemy;
     }
 }
