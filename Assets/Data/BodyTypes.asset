@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308a6223b5886974f90ff93f0d877032, type: 3}
   m_Name: BodyTypes
   m_EditorClassIdentifier: 
-  things:
-  - key: 2
-    value: {fileID: 6190237125890315626, guid: fedecfa0c2b1724428aaf1fae9bc1b7d, type: 3}
-  - key: 3
-    value: {fileID: 664109710486359229, guid: 3c520caea424f224aa5ae3d4b7785dd4, type: 3}
-  - key: 5
-    value: {fileID: 9060057829509160500, guid: c0c34735eedc99548b6a04e741e9337c, type: 3}
-  - key: 7
-    value: {fileID: 7470652107742319081, guid: 171c764484c61364bb75e45cc139c500, type: 3}
+  key: 02000000030000000500000007000000
+  value:
+  - {fileID: 919132149155446097, guid: 9a16947a13078194895e9895b3d7f0fe, type: 3}
+  - {fileID: 919132149155446097, guid: 479e6932d5815c94ba8fc0e605a5e2a5, type: 3}
+  - {fileID: 919132149155446097, guid: 9aa3987beb873df40a18eed8d8f81eb0, type: 3}
+  - {fileID: 919132149155446097, guid: d02225bec045f4943958e919854705d3, type: 3}

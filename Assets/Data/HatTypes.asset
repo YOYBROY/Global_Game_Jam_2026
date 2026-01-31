@@ -12,16 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308a6223b5886974f90ff93f0d877032, type: 3}
   m_Name: HatTypes
   m_EditorClassIdentifier: 
-  things:
-  - key: 11
-    value: {fileID: 5895769324496470854, guid: d68ba2e6570160d45a617819ca100e69, type: 3}
-  - key: 13
-    value: {fileID: 8971549397134566563, guid: 7d03796c6d3e56248862683991923122, type: 3}
-  - key: 17
-    value: {fileID: 935363277718024858, guid: 0a35c0a7e7f3fda439ab5cfb2c92474d, type: 3}
-  - key: 19
-    value: {fileID: 3298785026871919737, guid: ff5f38b1aafd7614797f0bc017401e14, type: 3}
-  - key: 23
-    value: {fileID: 8418054636540679537, guid: 913f98fc9a49a4049b14a9f4e7ac80d5, type: 3}
-  - key: 29
-    value: {fileID: 1813820961597772038, guid: 4c01efb842aa74e4986a5d9cb973c958, type: 3}
+  key: 0b0000000d0000001100000013000000170000001d000000
+  value:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

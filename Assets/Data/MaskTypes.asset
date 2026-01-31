@@ -12,14 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308a6223b5886974f90ff93f0d877032, type: 3}
   m_Name: MaskTypes
   m_EditorClassIdentifier: 
-  things:
-  - key: 31
-    value: {fileID: 591383998192080264, guid: f02eedfa7bce00c44ae84304e9ab36c0, type: 3}
-  - key: 37
-    value: {fileID: 458963333521683315, guid: 1c160f0d97ec910408f802028ce4e7f9, type: 3}
-  - key: 41
-    value: {fileID: 5921648304071911826, guid: 9c7b05975cb670e438a7d6130924574f, type: 3}
-  - key: 43
-    value: {fileID: 8132830037405866373, guid: 6765cb72eb6eb7c48b762e1797458144, type: 3}
-  - key: 281
-    value: {fileID: 5895769324496470854, guid: d68ba2e6570160d45a617819ca100e69, type: 3}
+  key: 1f00000025000000290000002b000000
+  value:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
