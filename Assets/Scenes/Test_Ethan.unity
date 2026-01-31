@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_NPC_Random (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -335,6 +339,10 @@ PrefabInstance:
     - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
       propertyPath: m_Name
       value: P_NPC_Random (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -544,6 +552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_NPC_Random (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -600,6 +612,10 @@ PrefabInstance:
     - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
       propertyPath: m_Name
       value: P_NPC_Random (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -658,6 +674,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_NPC_Random (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -714,6 +734,10 @@ PrefabInstance:
     - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
       propertyPath: m_Name
       value: P_NPC_Random (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1110,6 +1134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_NPC_Random (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1172,6 +1200,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_NPC_Random (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1228,6 +1260,10 @@ PrefabInstance:
     - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
       propertyPath: m_Name
       value: P_NPC_Random (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1286,11 +1322,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_NPC_Random (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+--- !u!1 &1873733207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3127198130588578383, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+  m_PrefabInstance: {fileID: 6347657997631936261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1873733211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873733207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88059e6eddd1c04eae73e1f7e31ef43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyTypes: {fileID: 11400000, guid: 6c2190e5105ad444aa35be0e2b2eec0a, type: 2}
+  hatTypes: {fileID: 11400000, guid: 04a4f90a3f8ed824ea9524a6eb5b616a, type: 2}
+  maskTypes: {fileID: 11400000, guid: 66266e84e7872074eb1229e3d6283671, type: 2}
+  clothColour: {fileID: 11400000, guid: 1afd38e81c36d8d41a9f84e591f92e1c, type: 2}
+  hatColour: {fileID: 11400000, guid: 8ca5c63bfb615f14b97345277de9e62d, type: 2}
+  skinColour: {fileID: 11400000, guid: 9d634bba360d2cb478f7913ba20082cd, type: 2}
+  maskColour: {fileID: 11400000, guid: 6446a973d4d366f44976bd2d80709aa4, type: 2}
+  ID: 0
 --- !u!4 &1910263273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4204238608657985548, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
@@ -1308,6 +1373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a3ae212d63e2c4db92a4026c3c333b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visionRange: 2
+  visionAngle: 5
+  visionConeResolution: 3
   attackAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1001 &2091264956
 PrefabInstance:
@@ -1360,6 +1428,10 @@ PrefabInstance:
     - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
       propertyPath: m_Name
       value: P_NPC_Random (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7325578907923257967, guid: b6bebab70ca81434ca86eb7c24c21586, type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1434,6 +1506,10 @@ PrefabInstance:
     - target: {fileID: 3619019515768255116, guid: 9ea0a4676be706446af4d3ff96bb2643, type: 3}
       propertyPath: m_Name
       value: Enemy Stationary
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619019515768255116, guid: 9ea0a4676be706446af4d3ff96bb2643, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8696467831097523467, guid: 9ea0a4676be706446af4d3ff96bb2643, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1552,6 +1628,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6028356809938201508, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3578404747763338431, guid: 22862275e8e405545babf9ad3c69ac32, type: 3}
+    - target: {fileID: 7758577353438912431, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7758577353438912431, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+    - target: {fileID: 8193222631026404023, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193222631026404023, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193222631026404023, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193222631026404023, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1559,6 +1663,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3405324056183362353, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
       insertIndex: 2
       addedObject: {fileID: 1910263275}
+    - targetCorrespondingSourceObject: {fileID: 3127198130588578383, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1873733211}
   m_SourcePrefab: {fileID: 100100000, guid: 51ed641cd33cc98409257090e86772bb, type: 3}
 --- !u!1001 &7578919239441012516
 PrefabInstance:
@@ -1733,6 +1840,10 @@ PrefabInstance:
     - target: {fileID: 220060563745143174, guid: 2b31d3e9385c0c14cb13b76967f795b3, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 220060563745143174, guid: 2b31d3e9385c0c14cb13b76967f795b3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 404108698234278613, guid: 2b31d3e9385c0c14cb13b76967f795b3, type: 3}
       propertyPath: m_LocalPosition.x
