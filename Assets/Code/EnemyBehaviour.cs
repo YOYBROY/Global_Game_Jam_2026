@@ -9,13 +9,14 @@ public class EnemyBehaviour : MonoBehaviour
     //patrol mode, attack mode.
 
     [Header("Variables")]
-    [SerializeField] private Transform[] points;
+    [SerializeField] private Transform pointParent;
     [SerializeField] private bool goToRandomWaypoint;
     [SerializeField] private float stoppedTime = 2f;
     [SerializeField] private float stoppedTimeVariance = 0.5f;
     [SerializeField] private float attackSpeed = 5f;
     [SerializeField] private float killRange = 5f;
 
+    private Transform[] points;
     private bool idling;
     private float speed;
     private int targetPointIndex;
@@ -36,6 +37,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         speed = agent.speed;
+        foreach
         foreach(Transform point in points)
         {
             point.transform.SetParent(null);
@@ -100,7 +102,6 @@ public class EnemyBehaviour : MonoBehaviour
     private void FinishIdle()
     {
         agent.speed = speed;
-        ProgressWaypoints();
         status = EnemyStatus.PATROLLING;
         idling = false;
     }
@@ -110,6 +111,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (agent.remainingDistance <= agent.stoppingDistance + agent.baseOffset)
         {
             status = EnemyStatus.IDLE;
+            ProgressWaypoints();
         }
     }
 
