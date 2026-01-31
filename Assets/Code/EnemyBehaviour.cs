@@ -1,4 +1,7 @@
 using System.Collections;
+using DG.Tweening;
+using Unity.Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,17 +12,24 @@ public class EnemyBehaviour : MonoBehaviour
     //patrol mode, attack mode.
 
     [Header("Variables")]
-    [SerializeField] private Transform[] points;
+    [SerializeField] private Transform pointParent;
     [SerializeField] private bool goToRandomWaypoint;
+    [SerializeField] private bool onlyLookAround;
+    [SerializeField] private float lookAngle = 30;
+    [SerializeField] private Ease lookAroundEaseType;
+    [SerializeField] private float beginLookAroundTime = 0.4f;
+    [SerializeField] private float endLookAroundTime = 0.4f;
     [SerializeField] private float stoppedTime = 2f;
     [SerializeField] private float stoppedTimeVariance = 0.5f;
     [SerializeField] private float attackSpeed = 5f;
     [SerializeField] private float killRange = 5f;
 
+    private Transform[] points;
     private bool idling;
     private float speed;
     private int targetPointIndex;
     private GameObject alertTarget;
+    private Vector3 startRotation;
 
     public enum EnemyStatus
     {
@@ -29,16 +39,29 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     public EnemyStatus status;
-
     private NavMeshAgent agent;
 
     void Start()
     {
+        if(onlyLookAround)
+        {
+            startRotation = transform.rotation.eulerAngles;
+        }
         agent = GetComponent<NavMeshAgent>();
         speed = agent.speed;
-        foreach(Transform point in points)
+        points = new Transform[pointParent.childCount];
+        for(int i = points.Length - 1; i >= 0 ; i--)
         {
-            point.transform.SetParent(null);
+            points[i] = pointParent.GetChild(i);
+            points[i].transform.SetParent(null);
+        }
+        if(GameEvents.current != null)
+        {
+            GameEvents.current.onPlayerLocated += AlertEnemy;
+        }
+        else
+        {
+            Debug.LogError("GameEvents is not in the scene and event was not added, Please add 'GameEssentials' to the scene");
         }
     }
 
@@ -56,11 +79,11 @@ public class EnemyBehaviour : MonoBehaviour
                 {
                     return;
                 }
-                float randomisedTime = stoppedTime + Random.Range(-stoppedTimeVariance, stoppedTimeVariance);
-                StartCoroutine(Idle(randomisedTime));
+                float randomisedTime = stoppedTime + UnityEngine.Random.Range(-stoppedTimeVariance, stoppedTimeVariance);
+                Idle(randomisedTime);
                 break;
             case EnemyStatus.PATROLLING:
-                Move();
+                CompleteMovement();
                 break;
             case EnemyStatus.ATTACKING:
                 agent.speed = attackSpeed;
@@ -76,32 +99,64 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    private IEnumerator Idle(float duration)
+    private void Idle(float duration)
     {
         agent.speed = 0;
         idling = true;
-        float timer = 0;
-        while (timer < duration)
+        if(onlyLookAround)
         {
-            timer += Time.deltaTime;
-            yield return null;
+            OnlyLookAround(duration);
         }
-        FinishIdle();
+        else
+        {
+            LookAround(duration);
+        }
+    }
+
+    private bool LookAround(float duration)
+    {
+        Vector3 forwardRotation = transform.rotation.eulerAngles;
+        Vector3 rightRotation = forwardRotation + new Vector3(0.0f, lookAngle, 0.0f);
+        Vector3 leftRotation = forwardRotation - new Vector3(0.0f, lookAngle, 0.0f);
+
+        Sequence seq = DOTween.Sequence();
+        seq.AppendInterval(beginLookAroundTime)
+        .Append(transform.DORotate(rightRotation, duration / 4).SetEase(lookAroundEaseType))
+        .AppendInterval(endLookAroundTime)
+        .Append(transform.DORotate(leftRotation, duration / 2).SetEase(lookAroundEaseType))
+        .AppendInterval(endLookAroundTime)
+        .Append(transform.DORotate(forwardRotation, duration / 4).SetEase(lookAroundEaseType))
+        .AppendCallback(() => { FinishIdle();});
+        return true;
+    }
+
+    private void OnlyLookAround(float duration)
+    {
+        Vector3 forwardRotation = startRotation;
+        Vector3 rightRotation = forwardRotation + new Vector3(0.0f, lookAngle, 0.0f);
+        Vector3 leftRotation = forwardRotation - new Vector3(0.0f, lookAngle * 2, 0.0f);
+
+        Sequence seq = DOTween.Sequence();
+        seq.AppendInterval(beginLookAroundTime)
+        .Append(transform.DORotate(leftRotation, duration / 2).SetEase(lookAroundEaseType))
+        .AppendInterval(endLookAroundTime)
+        .Append(transform.DORotate(forwardRotation, duration / 2).SetEase(lookAroundEaseType))
+        .AppendCallback(() => { OnlyLookAround(duration);});
     }
 
     private void FinishIdle()
     {
         agent.speed = speed;
-        ProgressWaypoints();
         status = EnemyStatus.PATROLLING;
         idling = false;
     }
 
-    private void Move()
+    private void CompleteMovement()
     {
         if (agent.remainingDistance <= agent.stoppingDistance + agent.baseOffset)
         {
             status = EnemyStatus.IDLE;
+            ProgressWaypoints();
         }
     }
 
@@ -115,9 +170,14 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if(goToRandomWaypoint)
         {
-            int randomIndex = Random.Range(0, points.Length);
-            agent.SetDestination(new Vector3(points[randomIndex].position.x, 0, points[randomIndex].position.z));
+            int randomIndex = UnityEngine.Random.Range(0, points.Length);
+            if(targetPointIndex == randomIndex)
+            {
+                ProgressWaypoints();
+                return;
+            }
             targetPointIndex = randomIndex;
+            agent.SetDestination(new Vector3(points[randomIndex].position.x, 0, points[randomIndex].position.z));
         }
         else
         {
@@ -127,5 +187,10 @@ public class EnemyBehaviour : MonoBehaviour
             newTargetPoint.y = 0;
             agent.SetDestination(newTargetPoint);
         }
+    }
+
+    void OnDestroy()
+    {
+        GameEvents.current.onPlayerLocated -= AlertEnemy;
     }
 }

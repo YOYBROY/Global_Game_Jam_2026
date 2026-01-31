@@ -54,7 +54,7 @@ public class EnemyVisionCone : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("Player"))
                 {
                     VisionConeMaterial.color = alertColor;
-                    //send signal for locating player
+                    GameEvents.current.PlayerLocated(hit.collider.gameObject);
                     break;
                 }
             }
