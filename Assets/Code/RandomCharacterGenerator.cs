@@ -71,8 +71,8 @@ public class RandomCharacterGenerator : MonoBehaviour
 
     private void ApplyColours()
     {
-        body.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(0, clothColourIndex);
         body.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(1, skinColourIndex);
+        body.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(0, clothColourIndex);
         if(hat.GetComponent<MeshRenderer>() != null)
         {
             hat.GetComponent<RandomColourPicker>().ApplyColourBasedOnIndex(0, hatColourIndex);
