@@ -49,7 +49,7 @@ public class PlayerInteractions : MonoBehaviour
                 {
                     target = hit.collider.gameObject;
                     Debug.Log("NPCTargeted Event Triggered", hit.collider.gameObject);
-                    GameEvents.current.NPCTargeted(hit.collider.gameObject);
+                    GameEvents.current.NPCTargeted(target);
                     count ++;
                     break;
                 }
@@ -60,6 +60,7 @@ public class PlayerInteractions : MonoBehaviour
         if (count == 0)
         {
             target = null;
+            GameEvents.current.NPCTargeted(target);
         }
     }
 
