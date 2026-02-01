@@ -59,8 +59,11 @@ public class PlayerInteractions : MonoBehaviour
         }
         if (count == 0)
         {
-            target = null;
-            GameEvents.current.NPCTargeted(target);
+            if(target != null)
+            {
+                target = null;
+                GameEvents.current.NPCTargeted(target);
+            }
         }
     }
 
