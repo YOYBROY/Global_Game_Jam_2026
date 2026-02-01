@@ -1,6 +1,7 @@
-using System;
-using System.Collections.Generic;
+using System.Collections;
 using DG.Tweening;
+using Unity.Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -70,7 +71,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     void Action()
-    {        
+    {
         switch (status)
         {
             case EnemyStatus.IDLE:
@@ -92,7 +93,7 @@ public class EnemyBehaviour : MonoBehaviour
                 float distanceToTarget = (transform.position - targetPosition).magnitude;
                 if(distanceToTarget < killRange)
                 {
-                    Debug.Log("Game Over", this);
+                    Debug.Log("Game Over");
                 }
                 break;
         }

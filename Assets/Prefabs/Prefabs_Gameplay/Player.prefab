@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7524948042515772962}
   - component: {fileID: 6995572861017820456}
   - component: {fileID: 8240990412707222545}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Passthrough Shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,8 +117,7 @@ GameObject:
   - component: {fileID: 8193222631026404023}
   - component: {fileID: 6028356809938201508}
   - component: {fileID: 7758577353438912431}
-  - component: {fileID: 1022868899593290493}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Player_Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 3127198130588578383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -147,7 +146,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3127198130588578383}
-  m_Mesh: {fileID: 3578404747763338431, guid: 22862275e8e405545babf9ad3c69ac32, type: 3}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7758577353438912431
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -172,7 +171,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -194,26 +192,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1022868899593290493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3127198130588578383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d88059e6eddd1c04eae73e1f7e31ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyTypes: {fileID: 11400000, guid: 6c2190e5105ad444aa35be0e2b2eec0a, type: 2}
-  hatTypes: {fileID: 11400000, guid: 04a4f90a3f8ed824ea9524a6eb5b616a, type: 2}
-  maskTypes: {fileID: 11400000, guid: 66266e84e7872074eb1229e3d6283671, type: 2}
-  clothColour: {fileID: 11400000, guid: 1afd38e81c36d8d41a9f84e591f92e1c, type: 2}
-  hatColour: {fileID: 11400000, guid: 8ca5c63bfb615f14b97345277de9e62d, type: 2}
-  skinColour: {fileID: 11400000, guid: 9d634bba360d2cb478f7913ba20082cd, type: 2}
-  maskColour: {fileID: 11400000, guid: 6446a973d4d366f44976bd2d80709aa4, type: 2}
-  ID: 0
 --- !u!1 &3405324056183362353
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,11 +202,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4204238608657985548}
   - component: {fileID: 7698769414069927118}
-  - component: {fileID: 3415618359087281180}
   - component: {fileID: 8954243785412876307}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,22 +241,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
---- !u!114 &3415618359087281180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3405324056183362353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a3ae212d63e2c4db92a4026c3c333b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visionRange: 2
-  visionAngle: 5
-  visionConeResolution: 3
-  attackAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!143 &8954243785412876307
 CharacterController:
   m_ObjectHideFlags: 0
