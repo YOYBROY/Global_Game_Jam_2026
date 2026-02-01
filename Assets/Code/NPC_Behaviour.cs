@@ -8,7 +8,7 @@ public class NPC_Behaviour : MonoBehaviour
     public bool levelTarget;
     [SerializeField] private Transform pointParent;
     [SerializeField] private bool goToRandomWaypoint;
-    [SerializeField] private float panicRange;
+    [SerializeField] private float panicRange = 10f;
     [SerializeField] private float panicSpeed;
     [SerializeField] private float panicMoveRadius;
     [SerializeField] private float lookAngle = 30;
@@ -16,7 +16,6 @@ public class NPC_Behaviour : MonoBehaviour
     [SerializeField] private float beginLookAroundTime = 0.4f;
     [SerializeField] private float endLookAroundTime = 0.4f;
     [SerializeField] private float stoppedTime = 2f;
-    [SerializeField] private float stoppedTimeVariance = 0.5f;
     [SerializeField] private GameObject targetIcon;
     [SerializeField] private bool orientWithWaypoint;
     
@@ -221,8 +220,12 @@ public class NPC_Behaviour : MonoBehaviour
             Die();
         }
         else
-        {
-            ReactToDeath(killedNPC.transform.position);
+        {  
+            float distance = (killedNPC.transform.position - transform.position).magnitude;
+            if(distance < panicRange)
+            {
+                ReactToDeath(killedNPC.transform.position);
+            }
         }
     }
 

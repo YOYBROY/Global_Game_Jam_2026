@@ -22,6 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField] private float stoppedTimeVariance = 0.5f;
     [SerializeField] private float attackSpeed = 5f;
     [SerializeField] private float killRange = 5f;
+    [SerializeField] private float alertRange = 10f;
 
     private Transform[] points;
     private bool idling;
@@ -160,9 +161,13 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     public void AlertEnemy(GameObject target)
-    {
-        status = EnemyStatus.ATTACKING;
-        alertTarget = target;
+    {   
+        float distance = (target.transform.position - transform.position).magnitude;
+        if(distance < alertRange)
+        {
+            status = EnemyStatus.ATTACKING;
+            alertTarget = target;
+        }
     }
 
     void ProgressWaypoints()
