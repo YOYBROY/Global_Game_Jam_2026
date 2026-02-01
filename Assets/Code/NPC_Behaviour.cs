@@ -126,7 +126,7 @@ public class NPC_Behaviour : MonoBehaviour
             Sequence seq = DOTween.Sequence();
             seq.Append(transform.DORotateQuaternion(targetRotation, 0.5f)).SetEase(lookAroundEaseType)
             .AppendInterval(stoppedTime)
-            .AppendCallback(() => { if(currentState != NPCStates.PANIC) { FinishIdle(); }});
+            .AppendCallback(() => { { FinishIdle(); }});
         }
         else
         {
