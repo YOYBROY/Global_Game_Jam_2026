@@ -54,10 +54,39 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6b1a38c08275888449fb70ac98fb1f75, type: 2}
     - target: {fileID: 919132149155446097, guid: 21849eaa6567a274bb64633907f37f3f, type: 3}
       propertyPath: m_Name
-      value: SM_Couch
+      value: P_Couch
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21849eaa6567a274bb64633907f37f3f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2740626967605318609}
   m_SourcePrefab: {fileID: 100100000, guid: 21849eaa6567a274bb64633907f37f3f, type: 3}
+--- !u!1 &8233204409422644457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 21849eaa6567a274bb64633907f37f3f, type: 3}
+  m_PrefabInstance: {fileID: 9116233528417991096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2740626967605318609
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8233204409422644457}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4084953, y: 1.6414646, z: 2.914703}
+  m_Center: {x: 0.03659612, y: 0.82073206, z: -0.00000017881393}

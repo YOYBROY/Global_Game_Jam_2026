@@ -25,11 +25,11 @@ Material:
     m_TexEnvs:
     - _Dither:
         m_Texture: {fileID: 2800000, guid: f744f0d06d9b53d488d9d2c5e7ab8832, type: 3}
-        m_Scale: {x: 9.27, y: 15.24}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 8400000, guid: ef3b0776fa6e18a479141a7631daa296, type: 2}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Palette:
         m_Texture: {fileID: 2800000, guid: 73a339e23c9be5145a0d6071e0c9b788, type: 3}
@@ -49,10 +49,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _: 163.95
     - _ColorMask: 15
     - _Dither_Opacity: -0.1
-    - _Pixel_Size: 0
     - _Quantization_Level: 100
     - _Saturation_Layers: 2
     - _Stencil: 0
