@@ -154,6 +154,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c95f27b30665b3b498f82e52e9f5d8b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 08b3d2950ba277c49a016cda5dd94a79, type: 2}
+    - target: {fileID: -7511558181221131132, guid: c95f27b30665b3b498f82e52e9f5d8b4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a4c7559879cabf4c971bfd1427d07ff, type: 2}
     - target: {fileID: 919132149155446097, guid: c95f27b30665b3b498f82e52e9f5d8b4, type: 3}
       propertyPath: m_Name
       value: P_OutsideWallCorner
