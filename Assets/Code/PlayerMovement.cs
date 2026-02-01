@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Variables")]
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float rotateSpeed = 5f;
 
     [Header("References")]
     [SerializeField] private InputActionReference moveAction;
@@ -12,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _inputDirection;
     private CharacterController CC;
     private Transform mainCamera;
+    Vector3 moveDirection;
 
     void OnEnable()
     {
@@ -23,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MoveDirection();
         Move();
+        RotateCharacter();
     }
 
     void MoveDirection()
@@ -36,7 +40,18 @@ public class PlayerMovement : MonoBehaviour
         Vector3 camRight = new Vector3(mainCamera.right.x, 0, mainCamera.right.z).normalized;
         Vector3 forwardMovement = camForward * _inputDirection.y;
         Vector3 horizontalMovement = camRight * _inputDirection.x;
-        Vector3 moveDirection = (forwardMovement + horizontalMovement).normalized;
+        moveDirection = (forwardMovement + horizontalMovement).normalized;
         CC.SimpleMove(moveDirection * speed);
+    }
+
+    void RotateCharacter()
+    {
+        if(_inputDirection != Vector2.zero)
+        {
+            Vector3 movement = new Vector3(moveDirection.x, 0, moveDirection.z);
+            
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+        }
     }
 }

@@ -48,7 +48,7 @@ public class PlayerInteractions : MonoBehaviour
                 if(hit.collider.gameObject.CompareTag("NPC"))
                 {
                     target = hit.collider.gameObject;
-                    Debug.Log("Target Acquired", hit.collider.gameObject);
+                    Debug.Log("NPCTargeted Event Triggered", hit.collider.gameObject);
                     GameEvents.current.NPCTargeted(hit.collider.gameObject);
                     count ++;
                     break;
@@ -65,9 +65,8 @@ public class PlayerInteractions : MonoBehaviour
 
     void Attack(InputAction.CallbackContext obj)
     {
-        Destroy(target);
         GameEvents.current.NPCKilled(target);
         target = null;
-        Debug.Log("Attacked");
+        Debug.Log("NPCKilled Event Triggered", target);
     }
 }
