@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7677040339338958662}
   - component: {fileID: 200385156703202018}
+  - component: {fileID: 5994807780520392604}
   m_Layer: 0
   m_Name: GameEssentials
   m_TagString: Untagged
@@ -44,3 +45,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da647c8437d426408b3c2491608e788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5994807780520392604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5051505453454130076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30fb389d9ff84c1428a77ad2d1a11b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escapeTimer: 60
+  player: {fileID: 0}
+  escapeTrigger: {fileID: 5302914946567035684, guid: a53ccaccad14b0a4ab96d690118d8baa, type: 3}
+  gameState: 0

@@ -9,6 +9,10 @@ public class CreateFakeWalls : MonoBehaviour
         BoxCollider[] walls = GetComponentsInChildren<BoxCollider>();
         foreach(BoxCollider wall in walls)
         {
+            if(GetComponent<Renderer>() == null)
+            {
+                continue;
+            }
             GameObject realWall = wall.gameObject;
             //duplicate and parent to wall
             GameObject fakeWall = Instantiate(realWall, realWall.transform.position, realWall.transform.rotation);

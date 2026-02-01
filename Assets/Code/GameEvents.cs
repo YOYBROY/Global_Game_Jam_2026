@@ -54,4 +54,13 @@ public class GameEvents : MonoBehaviour
             onGameOver();
         }
     }
+
+    public event Action onEscapeTimer;
+    public void StartEscapeTimer()
+    {
+        if(onEscapeTimer != null)
+        {
+            onEscapeTimer();
+        }
+    }
 }
