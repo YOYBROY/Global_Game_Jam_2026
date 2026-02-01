@@ -1,4 +1,5 @@
 using System.Threading;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager current;
 
     public float escapeTimer;
+    [SerializeField] private GameObject player;
+    [SerializeField]private GameObject escapeTrigger;
 
     public enum GameState
     {
@@ -17,18 +20,23 @@ public class GameManager : MonoBehaviour
 
     public GameState gameState;
 
+    private Vector3 escapeTriggerSpawn;
 
 
     void Start()
     {
+        escapeTriggerSpawn = player.transform.position;
         if (GameEvents.current != null)
         {
             GameEvents.current.onNPCKilled += CheckDeadBodyID;
+            GameEvents.current.onGameWin += WinGame;
+            GameEvents.current.onGameOver += LoseGame;
         }
         else
         {
             Debug.LogError("GameEvents is not in the scene and event was not added, Please add 'GameEssentials' to the scene");
         }
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -37,6 +45,15 @@ public class GameManager : MonoBehaviour
         {
             EscapeTimer();
         }
+    }
+    void WinGame()
+    {
+        gameState = GameState.WIN_STATE;
+    }
+
+    void LoseGame()
+    {
+        gameState = GameState.LOSE_STATE;
     }
 
     void EscapeTimer()
@@ -55,6 +72,10 @@ public class GameManager : MonoBehaviour
         {
             TriggerEscapeState();
         }
+        else
+        {
+            GameEvents.current.GameOver();
+        }
     }
 
     void TriggerEscapeState()
@@ -63,7 +84,15 @@ public class GameManager : MonoBehaviour
         //start escape timer
 
         //show escape timer hud
-
+        
         //enable escape trigger
+        escapeTrigger = Instantiate(escapeTrigger, escapeTriggerSpawn, quaternion.identity);
+    }
+
+    void OnDestroy()
+    {
+        GameEvents.current.onNPCKilled -= CheckDeadBodyID;
+            GameEvents.current.onGameWin -= WinGame;
+            GameEvents.current.onGameOver -= LoseGame;
     }
 }

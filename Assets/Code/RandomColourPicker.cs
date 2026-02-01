@@ -19,8 +19,8 @@ public class RandomColourPicker : MonoBehaviour
         }
         if(objectRenderer.materials.Length > 1)
         {
-            objectRenderer.materials[0].color = colourList[materialIndex].colours[colourIndex];
-            objectRenderer.materials[1].color = colourList[materialIndex].colours[colourIndex];
+            objectRenderer.materials[materialIndex].color = colourList[materialIndex].colours[colourIndex];
+            //objectRenderer.materials[1].color = colourList[materialIndex].colours[colourIndex];
         }
     }
 

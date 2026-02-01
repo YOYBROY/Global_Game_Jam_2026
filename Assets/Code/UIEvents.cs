@@ -9,6 +9,8 @@ public class UIEvents : MonoBehaviour
     [SerializeField] private string exposedParam;
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject scrollCanvas;
+    [SerializeField] private GameObject winCanvas;
+    [SerializeField] private GameObject loseCanvas;
     [SerializeField] private InputActionReference pauseAction;
     [SerializeField] private InputActionReference checkScroll;
     [SerializeField] private GameObject tabTooltip;
@@ -22,10 +24,18 @@ public class UIEvents : MonoBehaviour
         checkScroll.action.started += TargetCheck;
     }
 
+    private void Start()
+    {
+         GameEvents.current.onGameWin += YouWin;
+        GameEvents.current.onGameOver += YouLose;
+    }
+
     private void OnDisable()
     {
         pauseAction.action.started -= Pause;
-        checkScroll.action.started += TargetCheck;
+        checkScroll.action.started -= TargetCheck;
+        GameEvents.current.onGameWin -= YouWin;
+        GameEvents.current.onGameOver -= YouLose;
     }
     public void LoadSceneByString(string sceneName)
     {
@@ -54,9 +64,9 @@ public class UIEvents : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         isPaused = false;
         Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void Pause(InputAction.CallbackContext obj)
@@ -89,5 +99,21 @@ public class UIEvents : MonoBehaviour
             scrollAnimator.SetTrigger("isChecking");
         }
         
+    }
+
+    public void YouLose()
+    {
+        Debug.Log("you lose", this);
+        isPaused = true;
+        Time.timeScale = 0f;
+        loseCanvas.SetActive(true);
+    }
+
+    public void YouWin()
+    {
+        Debug.Log("you win", this);
+        isPaused = true;
+        Time.timeScale = 0f;
+        winCanvas.SetActive(true);
     }
 }

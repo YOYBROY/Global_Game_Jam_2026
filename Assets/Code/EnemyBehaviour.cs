@@ -93,6 +93,7 @@ public class EnemyBehaviour : MonoBehaviour
                 if(distanceToTarget < killRange)
                 {
                     Debug.Log("Game Over", this);
+                    GameEvents.current.GameOver();
                 }
                 break;
         }
