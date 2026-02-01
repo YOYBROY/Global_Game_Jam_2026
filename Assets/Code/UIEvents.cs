@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
@@ -15,8 +16,12 @@ public class UIEvents : MonoBehaviour
     [SerializeField] private InputActionReference checkScroll;
     [SerializeField] private GameObject tabTooltip;
     [SerializeField] private Animator scrollAnimator;
+    [SerializeField] private GameObject escapeTimer;
+    [SerializeField] private TMP_Text escapeTimerText;
     private bool isPaused;
     private bool checkingScroll;
+    private bool escaping;
+    public float escapeTimerTime = 60;
 
     private void OnEnable()
     {
@@ -26,8 +31,17 @@ public class UIEvents : MonoBehaviour
 
     private void Start()
     {
-         GameEvents.current.onGameWin += YouWin;
+        GameEvents.current.onGameWin += YouWin;
         GameEvents.current.onGameOver += YouLose;
+        GameEvents.current.onEscapeTimer += StartEscapeTimer;
+    }
+
+    void Update()
+    {
+        if(escaping)
+        {
+            escapeTimerText.text = GameManager.current.escapeTimer.ToString("F2");
+        }
     }
 
     private void OnDisable()
@@ -36,6 +50,7 @@ public class UIEvents : MonoBehaviour
         checkScroll.action.started -= TargetCheck;
         GameEvents.current.onGameWin -= YouWin;
         GameEvents.current.onGameOver -= YouLose;
+        GameEvents.current.onEscapeTimer -= StartEscapeTimer;
     }
     public void LoadSceneByString(string sceneName)
     {
@@ -98,7 +113,13 @@ public class UIEvents : MonoBehaviour
             checkingScroll = false;
             scrollAnimator.SetTrigger("isChecking");
         }
-        
+    }
+
+    void StartEscapeTimer()
+    {
+        Debug.Log("Escape Timer Activate");
+        escapeTimer.SetActive(true);
+        escaping = true;
     }
 
     public void YouLose()

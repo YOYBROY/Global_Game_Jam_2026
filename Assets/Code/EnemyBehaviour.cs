@@ -92,7 +92,6 @@ public class EnemyBehaviour : MonoBehaviour
                 float distanceToTarget = (transform.position - targetPosition).magnitude;
                 if(distanceToTarget < killRange)
                 {
-                    Debug.Log("Game Over", this);
                     GameEvents.current.GameOver();
                 }
                 break;

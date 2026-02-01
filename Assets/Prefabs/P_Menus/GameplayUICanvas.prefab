@@ -1078,7 +1078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7825993869740271533
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4538,6 +4538,9 @@ MonoBehaviour:
   checkScroll: {fileID: -8459544580682774932, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   tabTooltip: {fileID: 7618269332776020246}
   scrollAnimator: {fileID: 2949446546153307454}
+  escapeTimer: {fileID: 8497716763599361221}
+  escapeTimerText: {fileID: 6614612738810828224}
+  escapeTimerTime: 60
 --- !u!1 &8497716763599361221
 GameObject:
   m_ObjectHideFlags: 0

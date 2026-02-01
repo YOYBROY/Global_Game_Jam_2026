@@ -1,4 +1,3 @@
-using System.Threading;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -22,6 +21,10 @@ public class GameManager : MonoBehaviour
 
     private Vector3 escapeTriggerSpawn;
 
+    void Awake()
+    {
+        current = this;
+    }
 
     void Start()
     {
@@ -68,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckDeadBodyID(GameObject deadBody)
     {
-        if (deadBody.GetComponentInChildren<NPC_Behaviour>().levelTarget)
+        if (deadBody.GetComponent<NPC_Behaviour>().levelTarget)
         {
             TriggerEscapeState();
         }
@@ -80,12 +83,8 @@ public class GameManager : MonoBehaviour
 
     void TriggerEscapeState()
     {
+        GameEvents.current.StartEscapeTimer();
         gameState = GameState.ESCAPING;
-        //start escape timer
-
-        //show escape timer hud
-        
-        //enable escape trigger
         escapeTrigger = Instantiate(escapeTrigger, escapeTriggerSpawn, quaternion.identity);
     }
 
