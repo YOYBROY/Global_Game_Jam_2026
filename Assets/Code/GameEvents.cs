@@ -18,4 +18,22 @@ public class GameEvents : MonoBehaviour
             onPlayerLocated(playerLocation);
         }
     }
+
+    public event Action<GameObject> onNPCTargeted;
+    public void NPCTargeted(GameObject target)
+    {
+        if(onNPCTargeted != null)
+        {
+            onNPCTargeted(target);
+        }
+    }
+
+    public event Action<GameObject> onNPCKilled;
+    public void NPCKilled(GameObject target)
+    {
+        if(onNPCKilled != null)
+        {
+            onNPCKilled(target);
+        }
+    }
 }

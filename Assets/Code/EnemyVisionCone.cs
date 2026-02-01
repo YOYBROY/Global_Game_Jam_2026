@@ -16,14 +16,16 @@ public class EnemyVisionCone : MonoBehaviour
 
     [Header("References")]
     public Material VisionConeMaterial;
-    
+        
 
+    MeshRenderer objectRenderer;
     Mesh VisionConeMesh;
     MeshFilter MeshFilter_;
 
     void Start()
     {
-        transform.AddComponent<MeshRenderer>().material = VisionConeMaterial;
+        objectRenderer = transform.AddComponent<MeshRenderer>();
+        objectRenderer.material = VisionConeMaterial;
         MeshFilter_ = transform.AddComponent<MeshFilter>();
         VisionConeMesh = new Mesh();
         VisionAngle *= Mathf.Deg2Rad;
@@ -48,7 +50,6 @@ public class EnemyVisionCone : MonoBehaviour
             Sine = Mathf.Sin(Currentangle);
             Cosine = Mathf.Cos(Currentangle);
             Vector3 RaycastDirection = (transform.forward * Cosine) + (transform.right * Sine);
-            Vector3 VertForward = (Vector3.forward * Cosine) + (Vector3.right * Sine);
             if (Physics.Raycast(transform.position, RaycastDirection, out RaycastHit hit, VisionRange))
             {
                 if(hit.collider.gameObject.CompareTag("Player"))
