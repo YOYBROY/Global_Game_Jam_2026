@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionRange: 2
-  visionAngle: 5
-  visionConeResolution: 3
+  visionAngle: 10
+  visionConeResolution: 5
   attackAction: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!143 &8954243785412876307
 CharacterController:

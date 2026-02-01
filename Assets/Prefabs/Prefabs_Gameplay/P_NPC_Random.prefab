@@ -107,6 +107,14 @@ MonoBehaviour:
   hatColour: {fileID: 11400000, guid: 8ca5c63bfb615f14b97345277de9e62d, type: 2}
   skinColour: {fileID: 11400000, guid: 9d634bba360d2cb478f7913ba20082cd, type: 2}
   maskColour: {fileID: 11400000, guid: 012d4c642a9f1034caa3d1a53e10fdef, type: 2}
+  manualCharacter: 0
+  bodyIndex: 0
+  hatIndex: 0
+  maskIndex: 0
+  clothColourIndex: 0
+  hatColourIndex: 0
+  skinColourIndex: 0
+  maskColourIndex: 0
   ID: 0
 --- !u!1 &2034430468523650050
 GameObject:
@@ -191,7 +199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7810180773548335374
 Transform:
   m_ObjectHideFlags: 0
@@ -389,6 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7edb7eb37c8bc4baf617d7de5554f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelTarget: 0
   pointParent: {fileID: 982325927808096150}
   goToRandomWaypoint: 0
   panicRange: 5
@@ -400,6 +409,7 @@ MonoBehaviour:
   endLookAroundTime: 0.5
   stoppedTime: 2
   stoppedTimeVariance: 0.5
+  targetIcon: {fileID: 6767213815940339687}
   bloodParticles: {fileID: 1863689341741440304}
   currentState: 1
 --- !u!1 &8722001263578862511

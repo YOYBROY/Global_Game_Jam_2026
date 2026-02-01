@@ -22,7 +22,6 @@ public class NPC_Behaviour : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject bloodParticles;
 
-
     private NavMeshAgent agent;
     private float baseSpeed;
     private Transform[] points;
@@ -42,6 +41,7 @@ public class NPC_Behaviour : MonoBehaviour
 
     void Start()
     {
+        targetIcon.SetActive(false);
         startRotation = transform.rotation.eulerAngles;
         agent = GetComponent<NavMeshAgent>();
         baseSpeed = agent.speed;
@@ -61,6 +61,7 @@ public class NPC_Behaviour : MonoBehaviour
 
         if (GameEvents.current != null)
         {
+            GameEvents.current.onNPCTargeted += CheckIfSelfIsTarget;
             GameEvents.current.onNPCKilled += NPCKilled;
         }
         else
@@ -187,6 +188,18 @@ public class NPC_Behaviour : MonoBehaviour
         agent.SetDestination(hit.position);
     }
 
+    void CheckIfSelfIsTarget(GameObject target)
+    {
+        if(gameObject == target)
+        {
+            targetIcon.SetActive(true);
+        }
+        else
+        {
+            targetIcon.SetActive(false);
+        }
+    }
+
     void NPCKilled(GameObject killedNPC)
     {
         if (killedNPC == this.gameObject)
@@ -222,6 +235,7 @@ public class NPC_Behaviour : MonoBehaviour
 
     void OnDestroy()
     {
+        GameEvents.current.onNPCTargeted -= CheckIfSelfIsTarget;
         GameEvents.current.onNPCKilled -= NPCKilled;
     }
 }

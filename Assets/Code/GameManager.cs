@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(gameState = GameState.ESCAPING)
+        if(gameState == GameState.ESCAPING)
         {
             EscapeTimer();
         }
@@ -42,7 +42,11 @@ public class GameManager : MonoBehaviour
     void EscapeTimer()
     {
         escapeTimer -= Time.deltaTime;
-        if(escapeTimer < )
+        if(escapeTimer < 0)
+        {
+            gameState = GameState.LOSE_STATE;
+            GameEvents.current.GameOver();
+        }
     }
 
     public void CheckDeadBodyID(GameObject deadBody)
