@@ -18,6 +18,7 @@ public class NPC_Behaviour : MonoBehaviour
     [SerializeField] private float stoppedTime = 2f;
     [SerializeField] private float stoppedTimeVariance = 0.5f;
     [SerializeField] private GameObject targetIcon;
+    [SerializeField] private bool orientWithWaypoint;
     
     [Header("References")]
     [SerializeField] private GameObject bloodParticles;
@@ -28,6 +29,7 @@ public class NPC_Behaviour : MonoBehaviour
     private int targetPointIndex;
     private Vector3 startRotation;
     private bool idling;
+    private GameObject targetWaypoint;
 
     private enum NPCStates
     {
@@ -53,6 +55,7 @@ public class NPC_Behaviour : MonoBehaviour
                 points[i] = pointParent.GetChild(i);
                 points[i].transform.SetParent(null);
             }
+            targetWaypoint = points[0].gameObject;
         }
         else
         {
@@ -91,7 +94,6 @@ public class NPC_Behaviour : MonoBehaviour
                 if (agent.remainingDistance <= agent.stoppingDistance + agent.baseOffset)
                 {
                     LookAround(stoppedTime);
-                    
                 }
                 break;
             case NPCStates.LOOKING:
@@ -117,18 +119,30 @@ public class NPC_Behaviour : MonoBehaviour
         idling = true;
         agent.speed = 0;
         currentState = NPCStates.LOOKING;
-        Vector3 forwardRotation = transform.rotation.eulerAngles;
-        Vector3 rightRotation = forwardRotation + new Vector3(0.0f, lookAngle, 0.0f);
-        Vector3 leftRotation = forwardRotation - new Vector3(0.0f, lookAngle, 0.0f);
-
-        Sequence seq = DOTween.Sequence();
-        seq.AppendInterval(beginLookAroundTime)
-        .Append(transform.DORotate(rightRotation, duration / 4).SetEase(lookAroundEaseType))
-        .AppendInterval(endLookAroundTime)
-        .Append(transform.DORotate(leftRotation, duration / 2).SetEase(lookAroundEaseType))
-        .AppendInterval(endLookAroundTime)
-        .Append(transform.DORotate(forwardRotation, duration / 4).SetEase(lookAroundEaseType))
-        .AppendCallback(() => { if(currentState != NPCStates.PANIC) { FinishIdle(); }});
+        
+        if(orientWithWaypoint)
+        {
+            Quaternion targetRotation = targetWaypoint.transform.rotation;
+            Sequence seq = DOTween.Sequence();
+            seq.Append(transform.DORotateQuaternion(targetRotation, 0.5f)).SetEase(lookAroundEaseType)
+            .AppendInterval(stoppedTime)
+            .AppendCallback(() => { if(currentState != NPCStates.PANIC) { FinishIdle(); }});
+        }
+        else
+        {
+            Vector3 forwardRotation = transform.rotation.eulerAngles;
+            Vector3 rightRotation = forwardRotation + new Vector3(0.0f, lookAngle, 0.0f);
+            Vector3 leftRotation = forwardRotation - new Vector3(0.0f, lookAngle, 0.0f);
+        
+            Sequence seq = DOTween.Sequence();
+            seq.AppendInterval(beginLookAroundTime)
+            .Append(transform.DORotate(rightRotation, duration / 4).SetEase(lookAroundEaseType))
+            .AppendInterval(endLookAroundTime)
+            .Append(transform.DORotate(leftRotation, duration / 2).SetEase(lookAroundEaseType))
+            .AppendInterval(endLookAroundTime)
+            .Append(transform.DORotate(forwardRotation, duration / 4).SetEase(lookAroundEaseType))
+            .AppendCallback(() => { if(currentState != NPCStates.PANIC) { FinishIdle(); }});
+        }
         return true;
     }
 
