@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4745093499653927743}
   - component: {fileID: 6398445741965384666}
   - component: {fileID: 8253334415817708617}
+  - component: {fileID: 1109224261179016819}
   m_Layer: 0
   m_Name: sm_Bucket
   m_TagString: Untagged
@@ -86,6 +87,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1109224261179016819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336798654231403025}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4825014, y: 0.3849398, z: 0.5107243}
+  m_Center: {x: 0.0000009760261, y: 0.1924699, z: -0.000000014901165}
 --- !u!1 &1808382057239422768
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +119,7 @@ GameObject:
   - component: {fileID: 1715162619115854292}
   - component: {fileID: 5216862879162527933}
   - component: {fileID: 9118835255960492326}
+  - component: {fileID: 9170238590145733024}
   m_Layer: 0
   m_Name: sm_ToiletWall_R
   m_TagString: Untagged
@@ -172,6 +195,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9170238590145733024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808382057239422768}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.14169528, y: 3, z: 4.000001}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1 &3451252506386465079
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +399,7 @@ GameObject:
   - component: {fileID: 7318282290651091534}
   - component: {fileID: 3492409229111065363}
   - component: {fileID: 3203879058258561253}
+  - component: {fileID: 1409363113538042307}
   m_Layer: 0
   m_Name: sm_Toilet
   m_TagString: Untagged
@@ -430,6 +475,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1409363113538042307
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244593856058982338}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8964719, y: 1.6256194, z: 1.1079085}
+  m_Center: {x: 0, y: 0.8128097, z: 0.00698963}
 --- !u!1 &6815862720515213994
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +507,7 @@ GameObject:
   - component: {fileID: 6445358216207642445}
   - component: {fileID: 7437078150663503674}
   - component: {fileID: 8375341311605121153}
+  - component: {fileID: 5828923747461042142}
   m_Layer: 0
   m_Name: sm_ToiletDoor
   m_TagString: Untagged
@@ -516,6 +583,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5828923747461042142
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815862720515213994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8140424, y: 3, z: 0.24976751}
+  m_Center: {x: 0, y: 1.5, z: -0.00000003725291}
 --- !u!1 &8131772919515872837
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +653,7 @@ GameObject:
   - component: {fileID: 2738698392113443191}
   - component: {fileID: 9053514759747581248}
   - component: {fileID: 9175649636260012910}
+  - component: {fileID: 8770985632536945639}
   m_Layer: 0
   m_Name: sm_ToiletWall_L
   m_TagString: Untagged
@@ -640,3 +729,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8770985632536945639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974896447885628925}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.14169528, y: 3, z: 4.000001}
+  m_Center: {x: 0, y: 1.5, z: 0}
