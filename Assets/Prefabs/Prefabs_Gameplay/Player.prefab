@@ -213,6 +213,14 @@ MonoBehaviour:
   hatColour: {fileID: 11400000, guid: 8ca5c63bfb615f14b97345277de9e62d, type: 2}
   skinColour: {fileID: 11400000, guid: 9d634bba360d2cb478f7913ba20082cd, type: 2}
   maskColour: {fileID: 11400000, guid: 6446a973d4d366f44976bd2d80709aa4, type: 2}
+  manualCharacter: 0
+  bodyIndex: 0
+  hatIndex: 0
+  maskIndex: 0
+  clothColourIndex: 0
+  hatColourIndex: 0
+  skinColourIndex: 0
+  maskColourIndex: 0
   ID: 0
 --- !u!1 &3405324056183362353
 GameObject:
@@ -263,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  rotateSpeed: 500
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &3415618359087281180
 MonoBehaviour:

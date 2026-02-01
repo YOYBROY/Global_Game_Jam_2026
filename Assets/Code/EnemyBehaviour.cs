@@ -140,7 +140,7 @@ public class EnemyBehaviour : MonoBehaviour
         .Append(transform.DORotate(leftRotation, duration / 2).SetEase(lookAroundEaseType))
         .AppendInterval(endLookAroundTime)
         .Append(transform.DORotate(forwardRotation, duration / 2).SetEase(lookAroundEaseType))
-        .AppendCallback(() => { OnlyLookAround(duration);});
+        .AppendCallback(() => { if(status != EnemyStatus.ATTACKING) OnlyLookAround(duration);});
     }
 
     private void FinishIdle()

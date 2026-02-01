@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class NPC_Behaviour : MonoBehaviour
 {
     [Header("Variables")]
+    public bool levelTarget;
     [SerializeField] private Transform pointParent;
     [SerializeField] private bool goToRandomWaypoint;
     [SerializeField] private float panicRange;
@@ -16,6 +17,7 @@ public class NPC_Behaviour : MonoBehaviour
     [SerializeField] private float endLookAroundTime = 0.4f;
     [SerializeField] private float stoppedTime = 2f;
     [SerializeField] private float stoppedTimeVariance = 0.5f;
+    [SerializeField] private GameObject targetIcon;
     
     [Header("References")]
     [SerializeField] private GameObject bloodParticles;
@@ -108,8 +110,6 @@ public class NPC_Behaviour : MonoBehaviour
             SetRandomPosition();
         }
     }
-
-    
 
     private bool LookAround(float duration)
     {

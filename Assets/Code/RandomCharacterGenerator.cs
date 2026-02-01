@@ -11,13 +11,15 @@ public class RandomCharacterGenerator : MonoBehaviour
     [SerializeField] private ColourList skinColour;
     [SerializeField] private ColourList maskColour;
 
-    private int bodyIndex;
-    private int hatIndex;
-    private int maskIndex;
-    private int clothColourIndex;
-    private int hatColourIndex;
-    private int skinColourIndex;
-    private int maskColourIndex;
+    [SerializeField] bool manualCharacter;
+
+    [SerializeField] private int bodyIndex;
+    [SerializeField] private int hatIndex;
+    [SerializeField] private int maskIndex;
+    [SerializeField] private int clothColourIndex;
+    [SerializeField] private int hatColourIndex;
+    [SerializeField] private int skinColourIndex;
+    [SerializeField] private int maskColourIndex;
 
     private GameObject body;
     private GameObject hat;
@@ -27,7 +29,10 @@ public class RandomCharacterGenerator : MonoBehaviour
 
     void Start()
     {
-        CalculateIndices();
+        if(!manualCharacter)
+        {
+            CalculateIndices();
+        }
         CalculateID();
         SpawnModels();
         ApplyColours();
