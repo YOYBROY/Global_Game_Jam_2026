@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7704566106793510967}
   - component: {fileID: 2757799425675347302}
   - component: {fileID: 5994753145551367896}
+  - component: {fileID: 8773152198488513240}
   m_Layer: 0
   m_Name: NPC_Art
   m_TagString: Untagged
@@ -116,6 +117,28 @@ MonoBehaviour:
   skinColourIndex: 0
   maskColourIndex: 0
   ID: 0
+--- !u!95 &8773152198488513240
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190268788740537276}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86ffa6c0a72664c47b0472a8bf6fe018, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2034430468523650050
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +337,7 @@ GameObject:
   - component: {fileID: 7436533617600459465}
   - component: {fileID: 5174919398897636873}
   - component: {fileID: 2049394009577467300}
+  - component: {fileID: 5601962144784754839}
   m_Layer: 0
   m_Name: P_NPC_Random
   m_TagString: NPC
@@ -412,6 +436,18 @@ MonoBehaviour:
   targetIcon: {fileID: 6767213815940339687}
   bloodParticles: {fileID: 1863689341741440304}
   currentState: 1
+--- !u!114 &5601962144784754839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7325578907923257967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c0b1060e7ada44fab7ba0adb68f868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8722001263578862511
 GameObject:
   m_ObjectHideFlags: 0

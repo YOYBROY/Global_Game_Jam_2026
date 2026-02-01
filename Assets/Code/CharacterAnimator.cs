@@ -3,13 +3,13 @@ using UnityEngine.AI;
 
 public class CharacterAnimator : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public Animator animator;
+    private NavMeshAgent agent;
+    private Animator animator;
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        //animator = GetComponent<Animator>();
+        agent = GetComponentInChildren<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
